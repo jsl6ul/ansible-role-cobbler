@@ -53,6 +53,7 @@ cobbler_autoinstall_templates: []
 cobbler_settings:
 
 # Cobbler distros (OS)
+cobbler_distros: []
 # cobbler_distros:
 #   - name: distro_name
 #     netboot: # Information about netboot files initrd and kernel
@@ -66,6 +67,7 @@ cobbler_settings:
 #       kernel: /var/lib/tftpboot/debian/11.2/debian-installer/amd64/linux
 
 # Cobbler profiles
+cobbler_profiles: []
 # cobbler_profiles:
 #   - name: profile_name
 #     properties: # Dict of Cobbler properties, as defined in the plugin cobbler_profile
@@ -76,12 +78,21 @@ cobbler_settings:
 #         content: |
 #           any content to put in $SNIPPET('partition')
 
+# Cobbler systems
+cobbler_systems: []
+
 ## Dnsmasq
 # To use Dnsmasq as DHCP and DNS servers managed by Cobbler, enable this
 # module.
 # Requires to configure `manage_dhcp: true` and `manage_dns: true` in
 # cobbler_settings, otherwise Cobbler will not configure the services.
 cobbler_dnsmasq_module: false
+
+# cobbler_dnsmasq_options, a 'BlockInFile' inserted 'As is' in /etc/cobbler/dnsmasq.template 
+# cobbler_dnsmasq_options: |
+#   interface=eth0
+#   dhcp-range=192.168.0.101,192.168.0.150
+#   dhcp-option=3,192.168.0.1
 
 # DHCP range
 # String compatible with Dnsmasq's dhcp-range parameter.
